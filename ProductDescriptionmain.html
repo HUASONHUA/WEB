@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/14c95c3413.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="css/NAV.css">
+  <link rel="stylesheet" href="css/IntroductionColumn.css">
+  <title>翁卡克MUISC</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <script>
+    function submitCart(theForm) {
+      if (!theForm.submited) {
+        $.ajax({
+          url: $(theForm).attr('action') + "?ajax=",
+          method: 'POST',
+          data: $(theForm).serialize()
+        }).done(submitCartDoneHandler);
+        return false; //false取消原來同步的submit功能, true還原原來同步的submit功能		
+      }
+    }
+
+    function submitCartDoneHandler(data, status, xhr) {
+      // 	alert("加入購物車成功!" + data.totalQty);
+      $(".cartQty").html(data.totalQty);
+    }
+
+    $(document).ready(init);
+
+    function init() {
+      var audiovisual = $("#audiovisual")[0];
+      $('#audiovisual').prop("volume", ($("#volumerange").val() / 100));
+      $("#playBtn").click(PlayPauseHandler);
+      $("#volumerange").click(volumeUpDownHandler);
+      $("#volumeBtn").click(volumeMuted);
+      $("#audiovisual").on("timeupdate", timeUpdateHandler);
+      $("#audiovisual").on("play", startendedPlayHandler);
+      $("#audiovisual").on("pause", startendedPlayHandler);
+      $("#audiovisual").on("ended", endedPlayHandler);
+      submitCart(theForm);
+    }
+
+    function PlayPauseHandler() {
+      if (audiovisual.paused) {
+        //         alert("播放");
+        audiovisual.currentTime = 0;
+        audiovisual.play();
+        $("#playBtn img").attr("src", "images/audio/pause.gif");
+
+      } else {
+        //         alert("暫停");  
+        $("#playBtn img").attr("src", "images/audio/play.png");
+        audiovisual.pause();
+      }
+    }
+
+    function volumeMuted() {
+      //     alert("靜音");
+      audiovisual.muted = true;
+      $("#volumerange").val(0);
+      $("#volumeBtn img").attr("src", "images/audio/muted.png");
+    }
+
+    function startendedPlayHandler() {
+      //      alert("歌名");
+      var playAudioname = $("#playAudioname").text();
+      $("#playAudioTime").text(playAudioname);
+    }
+
+    function endedPlayHandler() {
+      //      alert("歌名");
+      var playAudioname = $("#playAudioname").text();
+      $("#playAudioTime").text(playAudioname);
+      if (audiovisual.ended) {
+        $("#playBtn img").attr("src", "images/audio/play.png");
+      }
+    }
+
+    function timeUpdateHandler() {
+      $("#playAudioTime").text(timeConvert(audiovisual.currentTime)
+        + " / " + timeConvert(audiovisual.duration));
+    }
+
+    function timeConvert(time) {
+      var mins = parseInt(time / 60);
+      var secs = parseInt(time % 60);
+      if (secs < 10) secs = "0" + secs;
+      return mins + ":" + secs;
+    }
+
+    function volumeUpDownHandler() {
+      //     alert($("#volumerange").val());
+      var volumesound = $("#volumerange").val();
+      var title = $('#volumerange').attr('title', volumesound);
+      if (volumesound != 0) {
+        $("#volumeBtn img").attr("src", "images/audio/volume.png");
+        audiovisual.muted = false;
+        volumesound /= 100;
+      } else {
+        $("#volumeBtn img").attr("src", "images/audio/muted.png");
+      }
+      audiovisual.volume = volumesound;
+    }
+  </script>
+</head>
+
+<body>
+  <nav class="header">
+    <!--LOGO-->
+    <div class="logo">
+      <a href="/"><img src="images/LOGO.png"></a>
+    </div>
+    <!--LOGO/-->
+
+    <!--選單-->
+    <div id="#menu">
+      <ul class="menu">
+        <form class="searchbag" action="store.html" method="GET">
+          <input type="search" name="keyword" placeholder="SEARCH" value=""> <input type="submit" value="搜尋">
+        </form>
+        <li><a href="/"><i class="fas fa-home"></i>
+            <p>首頁</p>
+          </a></li>
+        <li><a href="store.html">
+            <i class="fas fa-archive"></i>
+            <p>商店</p>
+          </a></li>
+        <li><a href="register.html"><i class="fas fa-edit"></i>
+            <p>註冊</p>
+          </a></li>
+        <!--未登入出現-->
+
+        <li><a href="../login.html"><i class="fas fa-sign-in-alt"></i>
+            <p>登入</p>
+          </a></li>
+        <!--登入出現-->
+
+        <li><a href="#"><i class="fas fa-sign-out-alt"></i>
+            <p>登出</p>
+          </a></li>
+
+        <li><a href="member.html"><i class="fas fa-user"></i>
+            <p class="username">用戶</p>
+          </a></li>
+        <!--登入出現-->
+
+        <li><a href="cart.html">
+            <i class="fas fa-cart-arrow-down"></i>
+            <span class='cartQty'></span>
+            <p>購物車</p>
+          </a></li>
+
+
+        <li class="lastli"><a href="MUSIC.html"><i class="fas fa-headphones-alt"></i>
+            <p>線上聽</p>
+          </a></li>
+        <li class="lastli"><a href="#ABUS"><i class="fas fa-exclamation-circle"></i>
+            <p>關於</p>
+          </a>
+        </li>
+        <!-- 				<a href="#" class="burgerclose"><i class="fas fa-times"></i></a> -->
+      </ul>
+      <!--漢堡-->
+      <a href="#" id="burger"><i class="fas fa-bars"></i></a>
+    </div>
+  </nav>
+
+  <div class="observebag">
+    <!--<p>查無此商品(id=?)</p>-->
+
+    <article class="Descriptionbag">
+      <img src="images/music/うっせぇわ.jpg">
+      <div class="ProductDescription">
+        <div id="playAudioname">
+          <a href="store.html?keyword=うっせぇわ">
+            うっせぇわ
+          </a>
+        </div>
+        <div>
+          <a href="store.html?keyword=Ado">
+            Ado
+          </a>
+        </div>
+        <div>上架日期:2020-10-23</div>
+        <div>曲數:1</div>
+        <div>折扣:--</div>
+        <div>價格:NT 65.0</div>
+      </div>
+
+    </article>
+    <form id="cartForm" action="cart.html" method="GET" onsubmit="return submitCart(this)">
+      <input type="hidden" value="1" name="productId">
+      <table class="Auditionbag">
+        <thead>
+          <tr>
+            <th>順序</th>
+            <th>歌曲</th>
+            <th>數量</th>
+            <th>歌手</th>
+            <th>購買</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>うっせぇわ </td>
+            <td><input type="hidden" name="quantity" value="1">
+              1</td>
+            <td> Ado</td>
+            <td>
+              <input type="submit" onclick="this.form.submited=true;" value="NT65.0">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">試聽</td>
+            <!--音樂 -->
+            <td colspan="3">
+              <div class="audiovisualbag">
+                <audio id="audiovisual" src="audiovisual/うっせぇわ.mp4" type="audio/mpeg">
+                </audio>
+                <a id="playBtn"><img src="images/audio/play.png"></a>
+                <div id="playAudioTime">うっせぇわ</div>
+                <a id="volumeBtn"><img src="images/audio/volume.png"></a>
+                <input id="volumerange" ontouchmove="volumeUpDownHandler()" type="range" value="25" min="0" max="100">
+              </div>
+            </td>
+
+            <td colspan="1">
+              <button type="submit" title="加入購物車">
+                <i class="fas fa-cart-arrow-down" aria-hidden="true"></i>
+              </button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </form>
+    <div class="singerRelated">
+      YouTube 已播放 1 億次，Nico Nico Douga 已播放 500 萬次。數字銷量累計達到30萬DL，流媒體播放量突破2億。
+    </div>
+    <div class="singerRelatedmusic">
+      <div id="RelatedmusicA"><a href="store.html?keyword=Ado">Ado相關音樂more</a></div>
+      <a href="ProductDescriptionmain.html?productId=26">
+        <img src="images/music/心という名の不可解.jpg"></a>
+      <a href="ProductDescriptionmain.html?productId=13">
+        <img src="images/music/千本桜Ado.jpg"></a>
+      <a href="ProductDescriptionmain.html?productId=5">
+        <img src="images/music/踊.jpg"></a>
+    </div>
+
+  </div>
+
+  <footer class="aboutallbag">
+    <div class="aboutbag">
+      <div id="ABUS">
+        關於
+        <address>地址:XXXXXXXXXX</address>
+        電話:(xx)xxxx-xxxx
+      </div>
+      <div class="SocialNetworking">
+        <div class="SNbag">
+          <a href="https://line.me/zh-hant/" id="line"><i class="fab fa-line"></i></a>
+          <a href="https://line.me/zh-hant/" class="SNtext">LINE</a>
+        </div>
+        <div class="SNbag">
+          <a href="https://twitter.com/?lang=zh-Hant" id="twitter"><i class="fa fa-twitter"></i></a>
+          <a href="https://twitter.com/?lang=zh-Hant" class="SNtext">TWITTER</a>
+        </div>
+        <div class="SNbag">
+          <a href="https://zh-tw.facebook.com/" id="facebook"><i class="fa fa-facebook-square"></i></a>
+          <a href="https://zh-tw.facebook.com/" class="SNtext">FACEBOOK</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--內容結束-->
+  <style>
+    .observebag {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      padding: 5em 0em 0 0em;
+      min-height: 72vh;
+    }
+
+    .Descriptionbag {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 0 0 1em 0;
+    }
+
+    .Descriptionbag img {
+      width: 20em;
+    }
+
+    .ProductDescription {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      margin: 0 0 0 2em;
+    }
+
+    .ProductDescription a {
+      /*text-decoration: none;*/
+      color: black;
+    }
+
+    .Auditionbag {
+      width: 100%;
+      border-top: 0.2em solid gray;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    .Auditionbag tbody tr:nth-child(1) td:nth-child(3) input {
+      width: 1em;
+    }
+
+    .Auditionbag tbody tr:nth-child(2) {
+      border-top: 1px solid #eee;
+    }
+
+    .singerRelated {
+      padding: 0 1em;
+      text-align: center;
+      margin: 0 0em 1em 0;
+      max-width: 45em;
+    }
+
+    .singerRelatedmusic {
+      margin-bottom: 0.5em;
+      text-align: center;
+    }
+
+    .singerRelatedmusic img {
+      width: 7.5em;
+    }
+
+    /*試聽*/
+    .audiovisualbag {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .audiovisualbag>:nth-child(1n+1):not(:nth-last-child(1)) {
+      margin-right: 0.5em;
+    }
+
+    #playAudioTime {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      min-width: 12.5em;
+      height: 1.5em;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    #volumerange {
+      width: 4em;
+    }
+
+    /*試聽 END*/
+    /**/
+    @media (max-width : 800px) {
+      .observebag {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .Descriptionbag {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .ProductDescription {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 1em 0 0 0em;
+      }
+
+      .ProductDescription div {
+        margin: 0.5em 0 0 0em;
+      }
+
+      .Auditionbag tbody tr:nth-child(1) td:nth-child(2),
+      .Auditionbag tbody tr:nth-child(1) td:nth-child(4) {
+        width: 6.25em;
+      }
+
+      #playAudioTime {
+        display: flex;
+        justify-content: flex-start;
+        min-width: auto;
+        max-width: 5em;
+      }
+
+      #RelatedmusicA a {
+        color: black;
+      }
+
+      .singerRelatedmusic img {
+        width: 5em;
+      }
+
+    }
+  </style>
+  <script src='js/NAV.js'></script>
+</body>
+
+</html>

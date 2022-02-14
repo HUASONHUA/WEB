@@ -1,0 +1,205 @@
+/*NAV選單*/
+body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+.header {
+    /*header 設定成 menu 選單的相對定位父元素*/
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: linear-gradient(0deg, #798c99 35%, #26262c 60%);
+    background: -moz-linear-gradient(0deg, #798c99 35%, #26262c 60%);
+    /*moz代表firefox*/
+    background: -webkit-linear-gradient(0deg, #798c99 35%, #26262c 60%);
+    /*webkit代表chrome*/
+    background: -o-linear-gradient(45deg, #8BC0E3 35%, #5247CF 60%);
+    /*o代表opera*/
+    height: 3.2em;
+    /* border-bottom: 3px solid rgb(6, 151, 247);*/
+    /*導覽列底線顏色*/
+    position: fixed;
+    /*box-shadow:1px 1px 10px #000;/*陰影效果*/
+    z-index: 500;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo img {
+    position: absolute;
+    height: 3.5em;
+}
+
+/*選單*/
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+.searchbag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2em;
+}
+
+.searchbag input[type="search"] {
+    width: 20vw;
+    height: 2em;
+}
+
+.searchbag input[type="submit"] {
+    width: 3em;
+    height: 2em;
+}
+
+.menu li {
+    float: left;
+    width: 3.5em;
+    list-style: none;
+    /* 移除項目符號 */
+}
+
+.menu li a {
+    display: block;
+    color: #40dfd7;
+    /*選單文字顏色*/
+    text-decoration: none;
+    padding: 0.9em 0 0.3em;
+    text-align: center;
+    /*文字置中*/
+}
+
+.menu li a:hover {
+    background: radial-gradient(circle at top, #5247CF 50%, #528fe4 70%, #8BC0E3 80%);
+    border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    color: #fff;
+}
+
+.menu li a p {
+    margin: 0;
+}
+
+.menu .lastli {
+    border: none;
+}
+
+.username {
+    white-space: nowrap;
+    overflow: hidden;
+}
+/*漢堡選單*/
+#burger {
+    display: none;
+    /*在PC上隱藏漢堡選單*/
+    color: #ffffff;
+
+}
+
+.burgerclose {
+    display: none;
+    /*在PC上隱藏漢堡選單*/
+    color: #e94040;
+}
+
+/*出現漢堡選單*/
+
+@media(max-width : 800px) {
+    .menu {
+        width: 100%;
+        /* 選單出現*/
+        display: block;
+        /*隱藏選單開始*/
+        max-height: 0;
+        overflow: hidden;
+        /*隱藏選單結束*/
+        /*漸變效果*/
+        transition: max-height 1s;
+        margin-top: 0;
+        /*絕對定位疊在網頁上*/
+        position: absolute;
+        /*權重*/
+        z-index: 100;
+        /*header 線條距離*/
+        top: 3.2em;
+        /* left:0 right:0表示滿版 */
+        text-align: center;
+        left: max-content;
+        right: 0;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+    }
+    .searchbag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1em 0;
+        background: linear-gradient(90deg, #65b1dd 35%, #5c87e2 60%);
+        margin-right: 0;
+    }
+    .searchbag input[type="search"] {
+        width: 50vw;
+        height: 2em;
+    }
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .menu li {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-end;
+        background: linear-gradient(90deg, #65b1dd 35%, #5c87e2 60%);
+        border-bottom: 1px dashed #5452df;
+    }
+    .menu li a {
+        transition: all 0.3s;
+        color: #290ab1;
+        padding: 0.8em 1em;
+    }
+    .menu li a:hover {
+        border-radius: 0 0 0 0;
+        -webkit-border-radius: 0 0 0 0;
+        -moz-border-radius: 0 0 0 0;
+        background: radial-gradient(circle at 100%, #5247CF 40%, #528fe4 60%, #8BC0E3 80%);
+        color: #fff;
+    }
+    #burger {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 2.5em;
+        margin: 0.25em 0.25em 0 0;
+        text-decoration: none;
+        /* 移除超連結底線 */
+    }
+    .fa-times {
+        width: 35px;
+
+        color: #c4c4c4;
+        text-decoration: none;
+    }
+    .fa-times:hover {
+        color: azure;
+    }
+
+    /*jQuery點擊後動態在 body 加上 class 影響選單高度*/
+    .burger-show .menu {
+        max-height: 100vh;
+    }
+}
+
+@media(max-width : 499px) {
+    .menu {
+        overflow: scroll;
+    }
+}
+/*NAV選單END*/

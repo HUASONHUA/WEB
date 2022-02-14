@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="fancybox3/jquery.fancybox.css">
+  <script src="https://kit.fontawesome.com/14c95c3413.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src='fancybox3/jquery.fancybox.js'></script>
+  <link rel="stylesheet" href="css/NAV.css">
+  <link rel="stylesheet" href="css/IntroductionColumn.css">
+  <title>翁卡克MUISC</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body>
+  <nav class="header">
+    <!--LOGO-->
+    <div class="logo">
+      <a href="/"><img src="images/LOGO.png"></a>
+    </div>
+    <!--LOGO/-->
+
+    <!--選單-->
+    <div id="#menu">
+      <ul class="menu">
+        <form class="searchbag" action="store.html" method="GET">
+          <input type="search" name="keyword" placeholder="SEARCH" value=""> <input type="submit" value="搜尋">
+        </form>
+        <li><a href="/"><i class="fas fa-home"></i>
+            <p>首頁</p>
+          </a></li>
+        <li><a href="store.html">
+            <i class="fas fa-archive"></i>
+            <p>商店</p>
+          </a></li>
+        <li><a href="register.html"><i class="fas fa-edit"></i>
+            <p>註冊</p>
+          </a></li>
+        <!--未登入出現-->
+
+        <li><a href="../login.html"><i class="fas fa-sign-in-alt"></i>
+            <p>登入</p>
+          </a></li>
+        <!--登入出現-->
+
+        <li><a href="#"><i class="fas fa-sign-out-alt"></i>
+            <p>登出</p>
+          </a></li>
+
+        <li><a href="member.html"><i class="fas fa-user"></i>
+            <p class="username">用戶</p>
+          </a></li>
+        <!--登入出現-->
+
+        <li><a href="cart.html">
+            <i class="fas fa-cart-arrow-down"></i>
+            <span class='cartQty'></span>
+            <p>購物車</p>
+          </a></li>
+
+
+        <li class="lastli"><a href="MUSIC.html"><i class="fas fa-headphones-alt"></i>
+            <p>線上聽</p>
+          </a></li>
+        <li class="lastli"><a href="#ABUS"><i class="fas fa-exclamation-circle"></i>
+            <p>關於</p>
+          </a>
+        </li>
+        <!-- 				<a href="#" class="burgerclose"><i class="fas fa-times"></i></a> -->
+      </ul>
+      <!--漢堡-->
+      <a href="#" id="burger"><i class="fas fa-bars"></i></a>
+    </div>
+  </nav>
+
+  <div id="muiscmenu">
+    <ul class="muiscmenu">
+      <li><a href="">全部</a></li>
+      <li><a href="?category=JPOP">J-POP</a></li>
+      <li><a href="?category=ANIME">ANIME</a></li>
+      <li><a href="?category=VOCALOID">VOCALOID</a></li>
+      <li><a href="?category=VTuber">VTuber</a></li>
+      <li><a href="storeSurrounding.html">周邊</a></li>
+    </ul>
+  </div>
+
+  <div id="storepackage">
+    <div class="rank">
+      <div id="ranksinger">
+        <ul>
+          <h2>歌手排行</h2>
+          <li><a>Ado </a></li>
+          <li><a>DECO*27 </a></li>
+          <li><a>YOASOBI </a></li>
+          <li><a>米津玄師 </a></li>
+          <li><a>姫森ルーナ </a></li>
+          <li><a>潤羽るしあ </a></li>
+          <li><a>湊あくあ </a></li>
+          <li><a>大神ミオ </a></li>
+          <li><a>さくらみこ </a></li>
+          <li><a>さくらみこ,戌神ころね </a></li>
+        </ul>
+      </div>
+      <div id="ranksong">
+        <ul>
+          <h2>歌曲排行</h2>
+
+          <li><a>うっせぇわ </a></li>
+          <li><a>パラサイト </a></li>
+          <li><a>三原色 </a></li>
+          <li><a>POP SONG </a></li>
+          <li><a>絶対忠誠♡なのなのら！ </a></li>
+          <li><a>思ひ恋ふ </a></li>
+          <li><a>あいわな </a></li>
+          <li><a>Howling </a></li>
+          <li><a>マイネームイズエリート☆ </a></li>
+          <li><a>みっころね×しょうたいむ!! </a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="songcontent">
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(46)">
+
+
+
+          <img class="productimg" src="images/music/The Rumbling.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=46">
+
+
+
+          <div class="pictureword">
+            <div>The Rumbling</div>
+            <div>SiM</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(41)">
+
+
+
+          <img class="productimg" src="images/music/パラサイト.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=41">
+
+
+
+          <div class="pictureword">
+            <div>パラサイト</div>
+            <div>DECO*27</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(39)">
+
+
+
+          <img class="productimg" src="images/music/POP SONG.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=39">
+
+
+
+          <div class="pictureword">
+            <div>POP SONG</div>
+            <div>米津玄師</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(29)">
+
+
+
+          <img class="productimg" src="images/music/絶対忠誠♡なのなのら！.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=29">
+
+
+
+          <div class="pictureword">
+            <div>絶対忠誠♡なのなのら！</div>
+            <div>姫森ルーナ</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(27)">
+
+
+
+          <img class="productimg" src="images/music/あいわな.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=27">
+
+
+
+          <div class="pictureword">
+            <div>あいわな</div>
+            <div>湊あくあ</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(28)">
+
+
+
+          <img class="productimg" src="images/music/思ひ恋ふ.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=28">
+
+
+
+          <div class="pictureword">
+            <div>思ひ恋ふ</div>
+            <div>潤羽るしあ</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(26)">
+
+
+
+          <img class="productimg" src="images/music/心という名の不可解.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=26">
+
+
+
+          <div class="pictureword">
+            <div>心という名の不可解</div>
+            <div>Ado</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(30)">
+
+
+
+          <img class="productimg" src="images/music/いいわけバニー.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=30">
+
+
+
+          <div class="pictureword">
+            <div>いいわけバニー</div>
+            <div>兎田ぺこら</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(20)">
+
+
+
+          <img class="productimg" src="images/music/Clover's Cry 神と神降ろしの少女.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=20">
+
+
+
+          <div class="pictureword">
+            <div>Clover's Cry ～神と神降ろしの少女～</div>
+            <div>横山奈緒 (CV.渡部優衣)、馬場このみ (CV.髙橋ミナミ)、秋月律子 (CV.若林直美)、大神 環 (CV.稲川英里)、木下ひなた (CV.田村奈央)</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(19)">
+
+
+
+          <img class="productimg" src="images/music/朝が来る.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=19">
+
+
+
+          <div class="pictureword">
+            <div>朝が来る</div>
+            <div>Aimer</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(13)">
+
+
+
+          <img class="productimg" src="images/music/千本桜Ado.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=13">
+
+
+
+          <div class="pictureword">
+            <div>千本桜</div>
+            <div>Ado</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(21)">
+
+
+
+          <img class="productimg" src="images/music/裸の勇者.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=21">
+
+
+
+          <div class="pictureword">
+            <div>裸の勇者</div>
+            <div>Vaundy</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(12)">
+
+
+
+          <img class="productimg" src="images/music/Anarchy.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=12">
+
+
+
+          <div class="pictureword">
+            <div>Anarchy</div>
+            <div>Official髭男dism</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(22)">
+
+
+
+          <img class="productimg" src="images/music/FACT.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=22">
+
+
+
+          <div class="pictureword">
+            <div>FACT</div>
+            <div>常闇トワ</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(8)">
+
+
+
+          <img class="productimg" src="images/music/みっころね×しょうたいむ!!.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=8">
+
+
+
+          <div class="pictureword">
+            <div>みっころね×しょうたいむ!!</div>
+            <div>さくらみこ,戌神ころね</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(7)">
+
+
+
+          <img class="productimg" src="images/music/マイネームイズエリート☆.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=7">
+
+
+
+          <div class="pictureword">
+            <div>マイネームイズエリート☆</div>
+            <div>さくらみこ</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(6)">
+
+
+
+          <img class="productimg" src="images/music/天使のagape.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=6">
+
+
+
+          <div class="pictureword">
+            <div>天使のagape</div>
+            <div>天音かなた</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(42)">
+
+
+
+          <img class="productimg" src="images/music/アニマル.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=42">
+
+
+
+          <div class="pictureword">
+            <div>アニマル</div>
+            <div>DECO*27</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(45)">
+
+
+
+          <img class="productimg" src="images/music/ONE AND LAST.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=45">
+
+
+
+          <div class="pictureword">
+            <div>ONE AND LAST</div>
+            <div>Aimer</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(34)">
+
+
+
+          <img class="productimg" src="images/music/猫リセット.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=34">
+
+
+
+          <div class="pictureword">
+            <div>猫リセット</div>
+            <div>ずっと真夜中でいいのに。</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(18)">
+
+
+
+          <img class="productimg" src="images/music/Blue.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=18">
+
+
+
+          <div class="pictureword">
+            <div>群青</div>
+            <div>YOASOBI</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(37)">
+
+
+
+          <img class="productimg" src="images/music/ツバメ ( feat. ミドリーズ ).jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=37">
+
+
+
+          <div class="pictureword">
+            <div>ツバメ ( feat. ミドリーズ )</div>
+            <div>YOASOBI</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(5)">
+
+
+
+          <img class="productimg" src="images/music/踊.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=5">
+
+
+
+          <div class="pictureword">
+            <div>踊</div>
+            <div>Ado</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(49)">
+
+
+
+          <img class="productimg" src="images/music/ぷ・れ・あ・で・す！.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=49">
+
+
+
+          <div class="pictureword">
+            <div>ぷ・れ・あ・で・す！</div>
+            <div>大空スバル</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(32)">
+
+
+
+          <img class="productimg" src="images/music/ほめのび.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=32">
+
+
+
+          <div class="pictureword">
+            <div>ほめのび</div>
+            <div>白銀ノエル</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(4)">
+
+
+
+          <img class="productimg" src="images/music/神っぽいな.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=4">
+
+
+
+          <div class="pictureword">
+            <div>神っぽいな</div>
+            <div>ピノキオピー</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(38)">
+
+
+
+          <img class="productimg" src="images/music/大正浪漫.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=38">
+
+
+
+          <div class="pictureword">
+            <div>大正浪漫</div>
+            <div>YOASOBI</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(50)">
+
+
+
+          <img class="productimg" src="images/music/Howling.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=50">
+
+
+
+          <div class="pictureword">
+            <div>Howling</div>
+            <div>大神ミオ</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(48)">
+
+
+
+          <img class="productimg" src="images/music/モモノネ.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=48">
+
+
+
+          <div class="pictureword">
+            <div>モモノネ</div>
+            <div>桃鈴ねね</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(31)">
+
+
+
+          <img class="productimg" src="images/music/Unison.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=31">
+
+
+
+          <div class="pictureword">
+            <div>Unison</div>
+            <div>宝鐘マリン,Yunomi</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(3)">
+
+
+
+          <img class="productimg" src="images/music/Monster.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=3">
+
+
+
+          <div class="pictureword">
+            <div>Monster</div>
+            <div>YOASOBI</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(9)">
+
+
+
+          <img class="productimg" src="images/music/天球彗星は夜を跨いで.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=9">
+
+
+
+          <div class="pictureword">
+            <div>天球彗星は夜を跨いで</div>
+            <div>星街すいせい</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(36)">
+
+
+
+          <img class="productimg" src="images/music/ばかじゃないのに.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=36">
+
+
+
+          <div class="pictureword">
+            <div>ばかじゃないのに</div>
+            <div>ずっと真夜中でいいのに。</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(2)">
+
+
+
+          <img class="productimg" src="images/music/三原色.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=2">
+
+
+
+          <div class="pictureword">
+            <div>三原色</div>
+            <div>YOASOBI</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(17)">
+
+
+
+          <img class="productimg" src="images/music/CryBaby.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=17">
+
+
+
+          <div class="pictureword">
+            <div>Cry Baby</div>
+            <div>Official髭男dism</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(47)">
+
+
+
+          <img class="productimg" src="images/music/Smile &amp; Go!!.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=47">
+
+
+
+          <div class="pictureword">
+            <div>Smile &amp; Go!!</div>
+            <div>不知火フレア</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(16)">
+
+
+
+          <img class="productimg" src="images/music/MIRA.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=16">
+
+
+
+          <div class="pictureword">
+            <div>MIRA</div>
+            <div>Kanaria</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(43)">
+
+
+
+          <img class="productimg" src="images/music/ヴァンパイア.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=43">
+
+
+
+          <div class="pictureword">
+            <div>ヴァンパイア</div>
+            <div>DECO*27</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(44)">
+
+
+
+          <img class="productimg" src="images/music/エンヴィーベイビー.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=44">
+
+
+
+          <div class="pictureword">
+            <div>エンヴィーベイビー</div>
+            <div>Kanaria</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(23)">
+
+
+
+          <img class="productimg" src="images/music/ラブカ.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=23">
+
+
+
+          <div class="pictureword">
+            <div>ラブカ？ (feat. Ado)</div>
+            <div>柊キライ</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(33)">
+
+
+
+          <img class="productimg" src="images/music/暗く黒く.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=33">
+
+
+
+          <div class="pictureword">
+            <div>暗く黒く</div>
+            <div>ずっと真夜中でいいのに。</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(1)">
+
+
+
+          <img class="productimg" src="images/music/うっせぇわ.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=1">
+
+
+
+          <div class="pictureword">
+            <div>うっせぇわ</div>
+            <div>Ado</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(15)">
+
+
+
+          <img class="productimg" src="images/music/KING.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=15">
+
+
+
+          <div class="pictureword">
+            <div>KING</div>
+            <div>Kanaria</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(35)">
+
+
+
+          <img class="productimg" src="images/music/お勉強しといてよ.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=35">
+
+
+
+          <div class="pictureword">
+            <div>お勉強しといてよ</div>
+            <div>ずっと真夜中でいいのに。</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(40)">
+
+
+
+          <img class="productimg" src="images/music/Lemon.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=40">
+
+
+
+          <div class="pictureword">
+            <div>Lemon</div>
+            <div>米津玄師</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="picturebag">
+
+        <a href="javascript:getProduct(14)">
+
+
+
+          <img class="productimg" src="images/music/千本桜.jpg" onerror="getMPERRImg(this)">
+        </a>
+
+        <a href="ProductDescriptionmain.html?productId=14">
+
+
+
+          <div class="pictureword">
+            <div>千本桜</div>
+            <div>黒うさP</div>
+          </div>
+        </a>
+      </div>
+
+
+    </div>
+  </div>
+  <div id="pfancybox"></div>
+  <!--商品 END-->
+
+  <footer class="aboutallbag">
+    <div class="aboutbag">
+      <div id="ABUS">
+        關於
+        <address>地址:XXXXXXXXXX</address>
+        電話:(xx)xxxx-xxxx
+      </div>
+      <div class="SocialNetworking">
+        <div class="SNbag">
+          <a href="https://line.me/zh-hant/" id="line"><i class="fab fa-line"></i></a>
+          <a href="https://line.me/zh-hant/" class="SNtext">LINE</a>
+        </div>
+        <div class="SNbag">
+          <a href="https://twitter.com/?lang=zh-Hant" id="twitter"><i class="fa fa-twitter"></i></a>
+          <a href="https://twitter.com/?lang=zh-Hant" class="SNtext">TWITTER</a>
+        </div>
+        <div class="SNbag">
+          <a href="https://zh-tw.facebook.com/" id="facebook"><i class="fa fa-facebook-square"></i></a>
+          <a href="https://zh-tw.facebook.com/" class="SNtext">FACEBOOK</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!--內容結束-->
+  <style>
+    body {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      max-width: 100%;
+    }
+
+    /*選單*/
+    #muiscmenu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 0.25em;
+      padding-top: 3.5em;
+    }
+
+    .muiscmenu {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100vw;
+      max-width: 100%;
+      height: 100%;
+      min-height: 2em;
+      background: linear-gradient(0deg, #f5f5f5 10%, #e6e6e6 30%, #e6e6e6 60%, #f5f5f5 90%);
+      margin: 0;
+      padding: 0;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+
+    .muiscmenu li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      list-style: none;
+      /* 移除項目符號 */
+    }
+
+    .muiscmenu li a {
+      color: #0e0c0c;
+      text-decoration: underline #0a0707;
+      font-size: 2.5vw;
+    }
+
+    .muiscmenu :hover {
+      color: #adaaab;
+      text-decoration: underline #adaaab;
+    }
+
+    /*選單 END*/
+
+    #storepackage {
+      display: grid;
+      grid-template-columns: 15em 1fr;
+      grid-template-rows: auto;
+      grid-gap: 1em;
+      padding: 0% 0em;
+      margin-bottom: 1em;
+      grid-template-areas: "rank songcontent"
+    }
+
+    /*排行榜*/
+    .rank {
+      grid-area: rank;
+      display: grid;
+      grid-template-rows: repeat(2, 28.5em);
+      grid-gap: 1em;
+      padding-left: 0.5em;
+    }
+
+    /*歌手排行*/
+    #ranksinger {
+      box-shadow: #000 1px 1px 5px 0px;
+      box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+      background-color: rgba(36, 36, 36, 0.65);
+    }
+
+    #ranksinger ul {
+      height: 100%;
+      counter-reset: section;
+      margin: 0 1em;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      counter-reset: section;
+    }
+
+    #ranksinger h2 {
+      margin: 0;
+      color: #d6d6d6;
+    }
+
+    #ranksinger li:before {
+      counter-increment: section;
+      content: counter(section);
+      display: inline-block;
+      padding: 0 1em;
+      margin-right: 1em;
+      height: 2em;
+      line-height: 2em;
+      color: #000;
+      background: #FFFFF0;
+      border-radius: 3px;
+      font-size: 0.8em;
+    }
+
+    #ranksinger li {
+      width: 100%;
+      border-bottom: 1px solid #FFF;
+      line-height: 2em;
+      height: 2em;
+      overflow: hidden;
+      color: #FFF;
+      font-size: 1em;
+    }
+
+    /*前三名顏色*/
+    #ranksinger li:nth-child(2):before {
+      background: #FAFF72;
+    }
+
+    #ranksinger li:nth-child(3):before {
+      background: #E9E7EF;
+    }
+
+    #ranksinger li:nth-child(4):before {
+      background: #F2BE45;
+    }
+
+    /*前三名顏色 END*/
+    #ranksinger li:nth-child(11):before {
+      margin-right: 0.5em;
+    }
+
+    /*歌手排行 END*/
+
+    /*歌曲排行*/
+    #ranksong {
+      box-shadow: #000 1px 1px 5px 0px;
+      box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+      background-color: rgba(36, 36, 36, 0.65);
+    }
+
+    #ranksong ul {
+      height: 100%;
+      counter-reset: section;
+      margin: 0 1em;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      counter-reset: section;
+    }
+
+    #ranksong h2 {
+      margin: 0;
+      color: #d6d6d6;
+    }
+
+    #ranksong li:before {
+      counter-increment: section;
+      content: counter(section);
+      display: inline-block;
+      padding: 0 1em;
+      margin-right: 1em;
+      height: 2em;
+      line-height: 2em;
+      color: #000;
+      background: #FFFFF0;
+      border-radius: 3px;
+      font-size: 0.8em;
+    }
+
+    #ranksong li {
+      width: 100%;
+      border-bottom: 1px solid #FFF;
+      line-height: 2em;
+      height: 2em;
+      overflow: hidden;
+      color: #FFF;
+      font-size: 1em;
+    }
+
+    /*前三名顏色*/
+    #ranksong li:nth-child(2):before {
+      background: #FAFF72;
+    }
+
+    #ranksong li:nth-child(3):before {
+      background: #E9E7EF;
+    }
+
+    #ranksong li:nth-child(4):before {
+      background: #F2BE45;
+    }
+
+    /*前三名顏色 END*/
+    #ranksong li:nth-child(11):before {
+      margin-right: 0.5em;
+    }
+
+    /*歌曲排行 END*/
+
+    /*排行榜 END*/
+
+
+    /*商品表*/
+    .songcontent {
+      grid-area: songcontent;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-gap: 1em;
+      padding: 1em 1em 1em 1em;
+      justify-items: center;
+      align-items: center;
+      background: linear-gradient(45deg, #c0bfbf 30%, #9b9b9b 70%);
+      position: relative;
+      overflow: scroll;
+      height: 55em;
+    }
+
+    .songcontent::-webkit-scrollbar {
+      width: 0.5em;
+      height: 0;
+    }
+
+    /*垂直滾動條和水平滾動條时交匯的部分 與 滾動條軌道*/
+    .songcontent::-webkit-scrollbar-corner,
+    .songcontent::-webkit-scrollbar-track {
+      display: none;
+    }
+
+    /*滾動條 滑條*/
+    .songcontent::-webkit-scrollbar-thumb {
+      border-radius: 1em;
+      background-color: rgba(112, 112, 112, 0.5);
+    }
+
+    .picturebag {
+      width: 100%;
+    }
+
+    .picturebag a {
+      text-decoration: none;
+    }
+
+    .picturebag img {
+      transition: transform 1s ease;
+      width: 100%;
+      height: 10em;
+      margin: auto;
+      transform: scale(0.95, 0.95);
+      transition: box-shadow 500ms;
+    }
+
+    .picturebag img:hover {
+      box-shadow: 0 0 2px 2px rgba(250, 187, 14, 0.9);
+      transform: scale(1, 1);
+      transition: transform 0.001s;
+    }
+
+    .pictureword {
+      width: 100%;
+    }
+
+    .pictureword div {
+      margin: 0;
+      height: 1.5em;
+      width: 15vw;
+      max-width: 100%;
+      white-space: nowrap;
+      /*固定一行*/
+      overflow: hidden;
+      /*過長隱藏*/
+      text-overflow: ellipsis;
+      /*過長變...*/
+    }
+
+    /*商品表 END*/
+    #pfancybox {
+      display: none;
+    }
+
+    .fancybox__content {
+      padding: 1em;
+    }
+
+    @media (min-width : 800px) AND (max-width : 1500px) {
+      .songcontent {
+        grid-area: songcontent;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        height: 69em;
+      }
+    }
+
+    /*小於1024PX*/
+    @media (max-width : 800px) {
+      #storepackage {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        padding: 0% 0em;
+        grid-template-areas: "songcontent""rank";
+      }
+
+      .muiscmenu li a {
+        font-size: 3.5vw;
+      }
+
+      .rank {
+        grid-area: rank;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        padding: 0 1em;
+        height: 100%;
+      }
+
+      /*歌手排行 800PX以下時*/
+      #ranksinger li:before {
+        padding: 0 0.8em;
+        margin-right: 1.2em;
+        font-size: 0.6em;
+      }
+
+      /*歌曲排行 800PX以下時*/
+      #ranksong li:before {
+        padding: 0 0.8em;
+        margin-right: 1.2em;
+        font-size: 0.6em;
+      }
+
+      .songcontent {
+        grid-area: songcontent;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        height: 64.5em;
+      }
+
+      .picturebag img {
+        height: 9em;
+      }
+    }
+
+    /*小於1024PX END*/
+  </style>
+
+  <script src='js/NAV.js'></script>
+  <script>
+    function getProduct(pId) {
+
+
+      var xhr = $.ajax({
+        url: 'ProductDescriptionajax.html',
+        method: 'GET'
+      }).done(getProductDoneHandler);
+    }
+
+    function getProductDoneHandler(data, textStatus, jqXHR) {
+
+      $("#pfancybox").html(data);
+      $("#pfancybox").css('height', 'fit-content');
+      $.fancybox.open({
+        src: '#pfancybox', type: 'inline',
+        opts: {
+          afterShow: function (instance, current) {
+            console.info('done!');
+          }
+        }
+      });
+    }
+
+    //錯誤圖片
+    function getMPERRImg(theImg) {
+      theImg.src = 'images/MPERR.png';
+      theImg.onerror = null;
+    }
+  </script>
+</body>
+
+</html>

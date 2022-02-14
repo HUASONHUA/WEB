@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="fancybox3/jquery.fancybox.css">
+  <script src="https://kit.fontawesome.com/14c95c3413.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src='fancybox3/jquery.fancybox.js'></script>
+  <link rel="stylesheet" href="css/NAV.css">
+  <link rel="stylesheet" href="css/IntroductionColumn.css">
+  <title>翁卡克MUISC</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body>
+  <nav class="header">
+    <!--LOGO-->
+    <div class="logo">
+      <a href="/"><img src="images/LOGO.png"></a>
+    </div>
+    <!--LOGO/-->
+
+    <!--選單-->
+    <div id="#menu">
+      <ul class="menu">
+        <form class="searchbag" action="store.html" method="GET">
+          <input type="search" name="keyword" placeholder="SEARCH" value=""> <input type="submit" value="搜尋">
+        </form>
+        <li><a href="/"><i class="fas fa-home"></i>
+            <p>首頁</p>
+          </a></li>
+        <li><a href="store.html">
+            <i class="fas fa-archive"></i>
+            <p>商店</p>
+          </a></li>
+        <li><a href="register.html"><i class="fas fa-edit"></i>
+            <p>註冊</p>
+          </a></li>
+        <!--未登入出現-->
+
+        <li><a href="../login.html"><i class="fas fa-sign-in-alt"></i>
+            <p>登入</p>
+          </a></li>
+        <!--登入出現-->
+
+        <li><a href="#"><i class="fas fa-sign-out-alt"></i>
+            <p>登出</p>
+          </a></li>
+
+        <li><a href="member.html"><i class="fas fa-user"></i>
+            <p class="username">用戶</p>
+          </a></li>
+        <!--登入出現-->
+
+        <li><a href="cart.html">
+            <i class="fas fa-cart-arrow-down"></i>
+            <span class='cartQty'></span>
+            <p>購物車</p>
+          </a></li>
+
+
+        <li class="lastli"><a href="MUSIC.html"><i class="fas fa-headphones-alt"></i>
+            <p>線上聽</p>
+          </a></li>
+        <li class="lastli"><a href="#ABUS"><i class="fas fa-exclamation-circle"></i>
+            <p>關於</p>
+          </a>
+        </li>
+        <!-- 				<a href="#" class="burgerclose"><i class="fas fa-times"></i></a> -->
+      </ul>
+      <!--漢堡-->
+      <a href="#" id="burger"><i class="fas fa-bars"></i></a>
+    </div>
+  </nav>
+
+
+  <div class="cartbag">
+    <form action="order.html" method="GET" id='cartForm'>
+      <div class="cartcontent">
+        <div class="cartnull">
+          <!--<p>購物車為空 </p>-->
+        </div>
+        <table>
+          <caption>購物內容</caption>
+          <thead>
+            <tr>
+              <th>圖片</th>
+              <th>名稱</th>
+              <th>種類<br>顏色</th>
+              <th>尺寸</th>
+              <th>折扣</th>
+              <th>價格</th>
+              <th>數量</th>
+              <!--               <th>取消<br>商品</th> -->
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td><img class="cartphoto" src="images/surrounding/YOASOBIHoodieRED.jpg">
+              </td>
+              <td class="pnamewidth">YOASOBIHoodie </td>
+              <td class="ptypecolorwidth">紅</td>
+              <td>M</td>
+              <td class="pUnitPricewidth">--</td>
+              <td> 1800.0 </td>
+              <td>1</td>
+            </tr>
+
+
+            <tr>
+              <td><img class="cartphoto" src="images/music/パラサイト.jpg">
+              </td>
+              <td class="pnamewidth">パラサイト </td>
+              <td class="ptypecolorwidth">--</td>
+              <td></td>
+              <td class="pUnitPricewidth">--</td>
+              <td> 62.0 </td>
+              <td>1</td>
+            </tr>
+
+
+            <tr>
+              <td><img class="cartphoto" src="images/music/The Rumbling.jpg">
+              </td>
+              <td class="pnamewidth">The Rumbling </td>
+              <td class="ptypecolorwidth">--</td>
+              <td></td>
+              <td class="pUnitPricewidth">--</td>
+              <td> 63.0 </td>
+              <td>1</td>
+            </tr>
+
+
+            <tr>
+              <td><img class="cartphoto" src="images/surrounding/ikura.jpg">
+              </td>
+              <td class="pnamewidth">YOASOBI×BEASTARS ぬいぐるみセット </td>
+              <td class="ptypecolorwidth">ikura布偶</td>
+              <td></td>
+              <td class="pUnitPricewidth">9折</td>
+              <td> 1080.0 </td>
+              <td>1</td>
+            </tr>
+
+
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="7">
+                <div class="PDmethodbag">
+                  <legend>付款方式
+                    <select name="paymentmethod" onchange="calculatePaymentFee()" "size=" 0" required="">
+                      <option value="">請選擇</option>
+
+                      <option value="CREDIT_CARDPAYMENT" data-fee="0.0">
+                        信用卡
+                      </option>
+
+                      <option value="SUPERMARKET" data-fee="30.0">
+                        超商付款 手續費30.0元
+                      </option>
+
+                      <option value="ATM" data-fee="0.0">
+                        ATM轉帳
+                      </option>
+
+                    </select>
+                  </legend>
+                  <legend>送貨方式
+                    <select name="Deliverymethods" onchange="calculateDeliveryFee()" size="0" required="">
+                      <option value="">請選擇</option>
+
+                      <option value="NODELIVERY" data-fee="0.0">
+                        不須寄貨
+                      </option>
+
+                      <option value="BLACKCAT" data-fee="100.0">
+                        黑貓宅配 運費100.0元
+                      </option>
+
+                      <option value="SEVENELEVEN" data-fee="60.0">
+                        7-11取貨 運費60.0元
+                      </option>
+
+                      <option value="SUPERMARKET" data-fee="60.0">
+                        超商取貨 運費60.0元
+                      </option>
+
+                    </select>
+                  </legend>
+                  <button id="EzShipBtn" type="button" onclick="goEzShip()">選擇超商</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="7">
+                <fieldset class="addressee">
+                  <legend>收件人<a href="javascript:copyMember()"><button type="button">同訂購人</button></a></legend>
+                  <div class="addresseebag">
+                    <label>姓名:</label>
+                    <input placeholder="姓名" name="name">
+                    <label>電話:</label>
+                    <input placeholder="電話'" name="phone">
+                    <label>e-mail:</label>
+                    <input placeholder="email" name="email">
+                    <label>地址:</label>
+                    <input placeholder="地址" name="shippingAddress">
+                  </div>
+                </fieldset>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" id="calculatepaymentFee">付款方式 手續費</td>
+              <td colspan="5" id="calculatedeliveryFee">送貨方式 運費</td>
+            </tr>
+            <tr>
+              <td colspan="2">件數:4項4件</td>
+              <td colspan="5">(含手續費+運費)總價:<span id="totalAmountWithFee" data-fee="3005.0">3005.0</span>元</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+              </td>
+              <td colspan="3"><input type="button" value="回商城購物" onclick="gobackstore()"></td>
+              <td colspan="3"><input type="submit" value="結帳"></td>
+            </tr>
+          </tfoot>
+        </table>
+
+
+      </div>
+    </form>
+
+  </div>
+
+  <jsp:include page="/SubViews/IntroductionColumn.jsp"></jsp:include>
+  <!--內容結束-->
+  <style>
+    /*查無商品*/
+    .cartnull {
+      display: flex;
+      justify-content: center;
+    }
+
+    /*查無商品 END*/
+
+    .cartbag {
+      padding: 3.5em 0;
+    }
+
+    .cartcontent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0em 0.5em;
+      margin: 0 auto;
+      min-height: 72vh;
+    }
+
+    .cartcontent table {
+      border: 1px solid gray;
+      border-top: none;
+      border-collapse: collapse;
+    }
+
+    .cartcontent caption {
+      border: 1px solid gray;
+      border-bottom: none;
+    }
+
+    .cartcontent caption,
+    .cartcontent thead {
+      background-color: orange;
+    }
+
+    .cartcontent th,
+    .cartcontent td {
+      border: 1px solid gray;
+      padding: 0.5em 0.2em;
+    }
+
+    .cartphoto {
+      width: 5em;
+    }
+
+    .ptypecolorwidth,
+    .pnamewidth {
+      word-wrap: break-word;
+    }
+
+    .pUnitPricewidth,
+    .pcancelwidth {
+      width: auto;
+    }
+
+    .cartcontent tbody,
+    .cartcontent tfoot {
+      text-align: center;
+    }
+
+    .cartcontent tbody tr:nth-child(2n+2) {
+      background-color: #ebebeb;
+    }
+
+    .cartcontent input[type="number"] {
+      font-size: 1em;
+      width: 3em;
+    }
+
+    /*商品表格 END */
+
+    /*付款方式*/
+    .PDmethodbag {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+
+    .cartcontent tfoot tr:nth-child(1) td {
+      padding-top: 1em;
+      border: 0;
+    }
+
+    /*付款方式 END*/
+
+    /*收件人*/
+    .cartcontent tfoot tr:nth-child(2) td {
+      border: 0;
+    }
+
+    .addressee {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .addressee input {
+      margin: 0 0 0.5em 0;
+    }
+
+    .addresseebag {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      text-align: left;
+
+    }
+
+    #EzShipBtn {
+      display: none;
+    }
+
+    /*收件人 END*/
+    /*結帳按鈕欄*/
+    .cartcontent tfoot tr:nth-child(5) td:nth-child(1n+1) {
+      border: 0;
+    }
+
+    /*結帳按鈕欄 END*/
+
+    /*小於500PX*/
+    @media (max-width: 500px) {
+
+      .cartcontent th,
+      .cartcontent td {
+        font-size: 0.5em;
+        padding: 0.5em 0.2em;
+      }
+
+      .cartphoto {
+        width: 3em;
+      }
+
+      .ptypecolorwidth,
+      .pnamewidth {
+        max-width: 3.5em;
+      }
+
+      .pUnitPricewidth {
+        max-width: 2em;
+      }
+
+      .pcancelwidth {
+        max-width: 0.5em;
+      }
+
+      .pUnitPricewidth input[type="number"] {
+        font-size: 1em;
+        width: 2em;
+      }
+    }
+
+    /*超過800PX*/
+    @media (min-width: 1024px) {
+      .cartcontent {
+        display: flex;
+        align-items: center;
+      }
+
+      .cartcontent th,
+      .cartcontent td {
+        padding: 0.5em 0.5em;
+        font-size: 1.5em;
+      }
+
+      .cartphoto {
+        width: 8em;
+      }
+    }
+  </style>
+
+  <script>
+    $(init);
+    function init() {
+
+    }
+
+    function repopulateFormDate() {
+      $("select[name='paymentmethod']").val('');
+      calculatePaymentFee();
+      $("select[name='Deliverymethods']").val('');
+      var theDeliveryType = document.getElementById("Deliverymethods");
+      calculateDeliveryFee();
+
+      $("input[name='name']").val('XXX');
+      $("input[name='email']").val('123456@gmail.com');
+      $("input[name='phone']").val('0987654321');
+      $("input[name='shippingAddress']").val('XXX-XXXXX-XXXXX');
+    }
+
+    function copyMember() {
+      $("input[name='name']").val('XXX');
+      $("input[name='email']").val('123456@gmail.com');
+      $("input[name='phone']").val('0987654321');
+      var Delivery = $("select[name='Deliverymethods']").val();
+      if (Delivery != "SUPERMARKET" && Delivery != "SEVENELEVEN") {
+        $("input[name='shippingAddress']").val('XXX-XXXXX-XXXXX');;
+      }
+      if (Delivery == "NODELIVERY") {
+        $("input[name='shippingAddress']").val('');
+      }
+    }
+
+
+    function gobackstore() {
+      location.href = 'store.html';
+    }
+
+
+    function calculatePaymentFee() {
+
+      var calculatepaymentFee = $("select[name='paymentmethod'] option:selected").val();
+      var text = $("select[name='paymentmethod'] option:selected").text();
+      if (calculatepaymentFee != "") {
+        $("#calculatepaymentFee").text(text);
+      } else {
+        $("#calculatepaymentFee").text("付款方式 手續費");
+      }
+      calculatetotalFee();
+    }
+
+    function calculateDeliveryFee() {
+      //     	  console.log($("select[name='Deliverymethods'] option:selected").val());
+      //     	  console.log($("select[name='Deliverymethods'] option:selected").text());
+
+      var calculatedeliveryFee = $("select[name='Deliverymethods'] option:selected").val();
+      var text = $("select[name='Deliverymethods'] option:selected").text();
+      if (calculatedeliveryFee == 'NODELIVERY') {
+        $("input[name='name']").val('XXX');
+        $("input[name='name']").attr('readonly', true);
+        $("input[name='phone']").val('0987654321');
+        $("input[name='phone']").attr('readonly', true);
+        $("input[name='email']").val('123456@gmail.com');
+        $("input[name='email']").attr('readonly', true);
+        $("input[name='shippingAddress']").val('');
+        $("input[name='shippingAddress']").attr('readonly', true);
+      } else {
+        $("input[name='name']").attr('readonly', false);
+        $("input[name='phone']").attr('readonly', false);
+        $("input[name='email']").attr('readonly', false);
+        $("input[name='shippingAddress']").attr('readonly', false);
+      }
+      if (calculatedeliveryFee == "SUPERMARKET" || calculatedeliveryFee == "SEVENELEVEN") {
+        $("input[name='shippingAddress']").val('');
+        $(EzShipBtn).css('display', 'block');
+      } else {
+        $(EzShipBtn).css('display', 'none');
+      }
+      if (calculatedeliveryFee != "") {
+        $("#calculatedeliveryFee").text(text);
+      } else {
+        $("#calculatedeliveryFee").text("送貨方式 運費");
+      }
+      calculatetotalFee();
+    }
+
+    function calculatetotalFee() {
+      var calculatepaymentFee = $("select[name='paymentmethod'] option:selected");
+      var calculatedeliveryFee = $("select[name='Deliverymethods'] option:selected");
+      var calculatetotalFee = Number($("#totalAmountWithFee").attr('data-fee'));
+      var totalFee = 0;
+
+      if (calculatepaymentFee.val() != "") {
+        totalFee += Number(calculatepaymentFee.attr('data-fee'));
+      }
+      if (calculatedeliveryFee.val() != "") {
+        totalFee += Number(calculatedeliveryFee.attr('data-fee'));
+      }
+
+      console.log(calculatetotalFee + totalFee);
+      $("#totalAmountWithFee").text(calculatetotalFee + totalFee);
+
+    }
+  </script>
+
+</body>
+
+</html>

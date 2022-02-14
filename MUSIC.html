@@ -1,0 +1,912 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/14c95c3413.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="css/NAV.css">
+</head>
+
+<body>
+	<nav class="header">
+		<!--LOGO-->
+		<div class="logo">
+			<a href="/"><img src="images/LOGO.png"></a>
+		</div>
+		<!--LOGO/-->
+
+		<!--選單-->
+		<div id="#menu">
+			<ul class="menu">
+				<form class="searchbag" action="store.html" method="GET">
+					<input type="search" name="keyword" placeholder="SEARCH" value=""> <input type="submit" value="搜尋">
+				</form>
+				<li><a href="/"><i class="fas fa-home"></i>
+						<p>首頁</p>
+					</a></li>
+				<li><a href="store.html">
+						<i class="fas fa-archive"></i>
+						<p>商店</p>
+					</a></li>
+				<li><a href="register.html"><i class="fas fa-edit"></i>
+						<p>註冊</p>
+					</a></li>
+				<!--未登入出現-->
+
+				<li><a href="../login.html"><i class="fas fa-sign-in-alt"></i>
+						<p>登入</p>
+					</a></li>
+				<!--登入出現-->
+
+				<li><a href="#"><i class="fas fa-sign-out-alt"></i>
+						<p>登出</p>
+					</a></li>
+
+				<li><a href="member.html"><i class="fas fa-user"></i>
+						<p class="username">用戶</p>
+					</a></li>
+				<!--登入出現-->
+
+				<li><a href="cart.html">
+						<i class="fas fa-cart-arrow-down"></i>
+						<span class='cartQty'></span>
+						<p>購物車</p>
+					</a></li>
+
+
+				<li class="lastli"><a href="MUSIC.html"><i class="fas fa-headphones-alt"></i>
+						<p>線上聽</p>
+					</a></li>
+				<li class="lastli"><a href="#ABUS"><i class="fas fa-exclamation-circle"></i>
+						<p>關於</p>
+					</a>
+				</li>
+				<!-- 				<a href="#" class="burgerclose"><i class="fas fa-times"></i></a> -->
+			</ul>
+			<!--漢堡-->
+			<a href="#" id="burger"><i class="fas fa-bars"></i></a>
+		</div>
+	</nav>
+	<div id="imageslider" class="transparency">
+		<ul>
+			<li aspectindex="0"><img src="" /></li>
+			<li aspectindex="1"><img src="" /></li>
+			<li aspectindex="2"><img src="" /></li>
+			<li aspectindex="3"><img src="" /></li>
+
+		</ul>
+	</div>
+	<div><input id="seekAudioTime" type="range" min="0" value="" onchange="seekAudioTime()"
+			ontouchend="seekAudioTime()">
+	</div>
+	<div id="playAudioTime"></div>
+
+	<div class="audiobag">
+		<div class="nextprevWidth">
+			<div id="prevcss"><button id="prevBtn"><i class="fas fa-backward"></i></button></div>
+			<div id="transparency"><button id="playBtn"><img src="images/audio/play1.png"></button></div>
+			<div id="nextcss"><button id="nextBtn"><i class="fas fa-forward"></i></button></div>
+		</div>
+
+		<audio id="audiovisual" src="" type="audio/mpeg">
+		</audio>
+
+		<div>
+			<a id="volumeBtn"><img src="images/audio/volume.png"></a>
+			<input id="volumerange" ontouchmove="volumeUpDownHandler()" type="range" value="25" min="0" max="100">
+			<a id="loopBtn" data-control="auto"><img src="images/audio/loop.png"></a>
+		</div>
+	</div>
+	<div id="songBanner">
+		<div class="leftside">
+			<div class="songbag">
+				<div class="songcolumnbag">
+					<span>1</span><a class="changemuisc" songcolumnindex="1" data-src='audiovisual/うっせぇわ.mp4'
+						data-photo="images/music/うっせぇわ.jpg" onclick="Achangemuisc(this)">
+						<img src="images/audio/play1.png" onclick="Achangeing(this)"></a>
+					<img id="songcolumnimg" src="images/music/うっせぇわ.jpg">
+					<div class="playAudioTime">うっせぇわ</div>
+				</div>
+			</div>
+			<div class="songbag">
+				<div class="songcolumnbag">
+					<span>2</span><a class="changemuisc" songcolumnindex="2" data-src="audiovisual/三原色.mp4"
+						data-photo="images/music/三原色.jpg" onclick="Achangemuisc(this)">
+						<img src="images/audio/play1.png" onclick="Achangeing(this)"></a>
+					<img id="songcolumnimg" src="images/music/三原色.jpg">
+					<div class="playAudioTime">三原色</div>
+				</div>
+			</div>
+			<div class="songbag">
+				<div class="songcolumnbag">
+					<span>3</span><a class="changemuisc" songcolumnindex="3" data-src='audiovisual/怪物.mp4'
+						data-photo="images/music/Monster.jpg" onclick="Achangemuisc(this)">
+						<img src="images/audio/play1.png" onclick="Achangeing(this)"></a>
+					<img id="songcolumnimg" src="images/music/Monster.jpg">
+					<div class="playAudioTime">Monster</div>
+				</div>
+			</div>
+			<div class="songbag">
+				<div class="songcolumnbag">
+					<span>4</span><a class="changemuisc" songcolumnindex="4" data-src="audiovisual/神っぽいな.mp4"
+						data-photo="images/music/神っぽいな.jpg" onclick="Achangemuisc(this)">
+						<img src="images/audio/play1.png" onclick="Achangeing(this)"></a>
+					<img id="songcolumnimg" src="images/music/神っぽいな.jpg">
+					<div class="playAudioTime">神っぽいな</div>
+				</div>
+			</div>
+			<div class="songbag">
+				<div class="songcolumnbag">
+					<span>5</span><a class="changemuisc" songcolumnindex="5" data-src="audiovisual/踊.mp4"
+						data-photo="images/music/踊.jpg" onclick="Achangemuisc(this)">
+						<img src="images/audio/play1.png" onclick="Achangeing(this)"></a>
+					<img id="songcolumnimg" src="images/music/踊.jpg">
+					<div class="playAudioTime">踊</div>
+				</div>
+			</div>
+			<div class="songbag">
+				<div class="songcolumnbag">
+					<span>6</span><a class="changemuisc" songcolumnindex="6" data-src="audiovisual/天使のagape.mp4"
+						data-photo="images/music/天使のagape.jpg" onclick="Achangemuisc(this)">
+						<img src="images/audio/play1.png" onclick="Achangeing(this)"></a>
+					<img id="songcolumnimg" src="images/music/天使のagape.jpg">
+					<div class="playAudioTime">天使のagape</div>
+				</div>
+			</div>
+		</div>
+		<div class="rightside">歌曲列表</div>
+	</div>
+
+	<style>
+		#songBanner {
+			display: flex;
+			width: 20.75em;
+			padding: 0em;
+			position: absolute;
+			left: -300px;
+			top: 5em;
+		}
+
+		.leftside {
+			width: 18.75em;
+		}
+
+		.rightside {
+			border-radius: 0 5px 5px 0;
+			font-size: 1.5em;
+			text-align: center;
+			width: 2em;
+			background: no-repeat linear-gradient(45deg, #757575 30%, #a7a7a7 70%);
+			position: relative;
+			height: 5.5em;
+			color: rgb(236, 235, 235);
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			background: no-repeat linear-gradient(27deg, rgba(149, 146, 146, 0.7) 30%, rgb(103, 102, 102) 70%);
+			background: rgba(0, 0, 0, 0.9);
+			min-height: 100vh;
+		}
+
+		#imageslider {
+			display: flex;
+			justify-content: center;
+			-moz-perspective: 1000px;
+			perspective: 1000;
+			-moz-perspective-origin: 50% 100px;
+			perspective-origin: 50% 100px;
+			margin: 0;
+			padding: 5em 0 0 0;
+			width: 100%;
+			height: 20em;
+		}
+
+		#imageslider ul {
+			list-style-type: none;
+			padding: 0;
+			position: relative;
+			margin: 0 auto;
+			height: 281px;
+			width: 450px;
+			-moz-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+			-moz-transform-origin: 50% 100px 0;
+			transform-origin: 50% 100px 0;
+			-moz-transition: all 1.0s ease-in-out;
+			transition: all 1.0s ease-in-out;
+		}
+
+		#imageslider ul li {
+			position: absolute;
+			height: 281px;
+			width: 450px;
+			padding: 0px;
+		}
+
+		#imageslider ul li img {
+			height: 20em;
+			width: 28em;
+		}
+
+		/*第一張角度*/
+		#imageslider ul li:nth-child(1) {
+			-moz-transform: translateZ(225px);
+			transform: translateZ(225px);
+		}
+
+		/*第二張角度*/
+		#imageslider ul li:nth-child(2) {
+			-moz-transform: rotateY(90deg) translateZ(225px);
+			transform: rotateY(90deg) translateZ(225px);
+		}
+
+		/*第三張角度*/
+		#imageslider ul li:nth-child(3) {
+			-moz-transform: rotateY(180deg) translateZ(225px);
+			transform: rotateY(180deg) translateZ(225px);
+		}
+
+		/*第四張角度*/
+		#imageslider ul li:nth-child(4) {
+			-moz-transform: rotateY(-90deg) translateZ(225px);
+			transform: rotateY(-90deg) translateZ(225px);
+		}
+
+		#imageslider.transparency img {
+			opacity: 0.7;
+		}
+
+		#imageslider+div {
+			display: flex;
+			justify-content: center;
+			margin: 0.5em 0em;
+		}
+
+		#imageslider+div input[type="range"] {
+			width: 20em;
+		}
+
+		/* input range 主體 */
+		#seekAudioTime {
+			-webkit-appearance: none;
+			cursor: pointer;
+			height: 1em;
+		}
+
+		/* 滑動鈕 */
+		#seekAudioTime::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			border: 1px solid #757575;
+			height: 1.5em;
+			width: 1em;
+			border-radius: 0px;
+			background: #c5c5c5;
+			cursor: pointer;
+			margin-top: -0.25em;
+			box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+		}
+
+		/* 滑動軌道*/
+		#seekAudioTime::-webkit-slider-runnable-track {
+			height: 1em;
+			background: no-repeat linear-gradient(27deg, #757575 30%, #a7a7a7 70%);
+		}
+
+		#seekAudioTime:focus {
+			outline: none;
+		}
+
+		/*時間顯示*/
+		#playAudioTime {
+			text-align: center;
+			font-size: 2em;
+			margin: 0.2em 0 0.5em 0;
+			height: 37px;
+			color: #a7a7a7;
+		}
+
+		/*音樂按鈕*/
+		.audiobag {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-evenly;
+			position: relative;
+		}
+
+		.audiobag>:nth-child(3) {
+			margin: 0.5em 0;
+			background: no-repeat linear-gradient(45deg, #757575 30%, #a7a7a7 70%);
+			border-radius: 5px;
+			box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+		}
+
+		.nextprevWidth {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			max-width: 25em;
+		}
+
+		#prevcss>button,
+		#nextcss>button {
+			font-size: 2.5em;
+			box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+				rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+				rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+		}
+
+		#prevcss>button {
+			margin-right: 0.5em;
+			background: no-repeat linear-gradient(45deg, #858484 30%, #424242 70%);
+			border-radius: 0.5em 0 0 0.5em;
+		}
+
+		#nextcss>button {
+			margin-left: 0.5em;
+			background: no-repeat linear-gradient(-45deg, #858484 30%, #424242 70%);
+			border-radius: 0 0.5em 0.5em 0;
+		}
+
+		#transparency {
+			display: flex;
+			justify-content: center;
+			margin: 0;
+		}
+
+		#playBtn {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 4em;
+			height: 4em;
+			/*border:2px solid #0e0d0d;*/
+			border-radius: 100%;
+			background: no-repeat linear-gradient(90deg, #858484 30%, #424242 70%);
+			box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+				rgba(87, 84, 84, 0.3) 0px 30px 60px -30px,
+				rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+		}
+
+		#playBtn img {
+			width: 2.5em;
+		}
+
+		/*音樂按鈕 END*/
+
+		/*歌曲列表*/
+		#songlist {
+			margin-top: 1em;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			color: #a7a7a7;
+		}
+
+		.songbag {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.songcolumnbag {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 300px;
+			color: aliceblue;
+			background: rgba(255, 253, 253, 0.2);
+			opacity: 0.7;
+			box-shadow: rgb(73, 73, 73) 0px 20px 30px -10px;
+
+		}
+
+		.songcolumnbag:hover {
+			opacity: 1;
+			box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+		}
+
+		.songcolumnbag>:nth-child(1n+1):not(:nth-last-child(1)) {
+			margin-right: 0.1em;
+		}
+
+		.songcolumnbag>:nth-child(1n+1):not(:nth-last-child(1)) {
+			margin-right: 0.2em;
+		}
+
+		.songcolumnbag>:nth-child(2) {
+			cursor: pointer;
+		}
+
+		.songcolumnbag .playAudioTime {
+			display: flex;
+			align-items: center;
+			margin: 1em 0;
+			justify-content: space-evenly;
+			min-width: 12.5em;
+			height: 32px;
+			color: white;
+			background: rgba(0, 0, 0, 0.5);
+			background: no-repeat linear-gradient(45deg, #757575 30%, #a7a7a7 70%);
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		#volumerange {
+			height: 25px;
+			width: 4em;
+			margin: 0 0.2em;
+		}
+
+		#playBtn,
+		#prevcss>button,
+		#nextcss>button,
+		#loopBtn,
+		#volumeBtn {
+			cursor: pointer;
+		}
+
+		#songcolumnimg {
+			width: 2em;
+		}
+
+		/*歌曲列表 END*/
+
+		@media (max-width: 600px) {
+			#imageslider {
+				height: 15em;
+			}
+
+			#imageslider ul li {
+				height: 210.025px;
+				width: 337.5px;
+			}
+
+			#imageslider ul {
+				height: 210.025px;
+				width: 337.5px;
+			}
+
+			#imageslider ul li img {
+				height: 15em;
+				width: 21em;
+			}
+
+			/*第一張角度*/
+			#imageslider ul li:nth-child(1) {
+				-moz-transform: translateZ(168.75px);
+				transform: translateZ(168.75px);
+			}
+
+			/*第二張角度*/
+			#imageslider ul li:nth-child(2) {
+				-moz-transform: rotateY(90deg) translateZ(168.75px);
+				transform: rotateY(90deg) translateZ(168.75px);
+			}
+
+			/*第三張角度*/
+			#imageslider ul li:nth-child(3) {
+				-moz-transform: rotateY(180deg) translateZ(168.75px);
+				transform: rotateY(180deg) translateZ(168.75px);
+			}
+
+			/*第四張角度*/
+			#imageslider ul li:nth-child(4) {
+				-moz-transform: rotateY(-90deg) translateZ(168.75px);
+				transform: rotateY(-90deg) translateZ(168.75px);
+			}
+
+			#playAudioTime {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 1.5em;
+			}
+		}
+	</style>
+	<script src='js/NAV.js'></script>
+	<script>
+
+		$(document).ready(init);
+
+		var songdata =
+			[{
+				id: '',
+				productId: '',
+				name: '',
+				src: '',
+				photo: ''
+			},
+			{
+				id: '1',
+				productId: '1',
+				name: 'うっせぇわ',
+				src: 'audiovisual/うっせぇわ.mp4',
+				photo: 'images/music/うっせぇわ.jpg'
+			},
+			{
+				id: '2',
+				productId: '2',
+				name: '三原色',
+				src: 'audiovisual/三原色.mp4',
+				photo: 'images/music/三原色.jpg'
+			},
+			{
+				id: '3',
+				productId: '3',
+				name: 'Monster',
+				src: 'audiovisual/怪物.mp4',
+				photo: 'images/music/Monster.jpg'
+			},
+			{
+				id: '4',
+				productId: '4',
+				name: '神っぽいな',
+				src: 'audiovisual/神っぽいな.mp4',
+				photo: 'images/music/神っぽいな.jpg'
+			},
+			{
+				id: '5',
+				productId: '5',
+				name: '踊',
+				src: 'audiovisual/踊.mp4',
+				photo: 'images/music/踊.jpg'
+			},
+			{
+				id: '6',
+				productId: '6',
+				name: '天使のagape',
+				src: 'audiovisual/天使のagape.mp4',
+				photo: 'images/music/天使のagape.jpg'
+			},
+			{
+				id: '7',
+				productId: '7',
+				name: 'マイネームイズエリート☆',
+				src: 'audiovisual/マイネームイズエリート☆.mp4',
+				photo: 'images/music/マイネームイズエリート☆.jpg'
+			},
+			{
+				id: '8',
+				productId: '8',
+				name: 'みっころね×しょうたいむ!!',
+				src: 'audiovisual/みっころね×しょうたいむ.mp4',
+				photo: 'images/music/みっころね×しょうたいむ!!.jpg'
+			},
+			{
+				id: '9',
+				productId: '9',
+				name: '天球彗星は夜を跨いで',
+				src: 'audiovisual/天球彗星は夜を跨いで.mp4',
+				photo: 'images/music/天球彗星は夜を跨いで.jpg'
+			},
+			{
+				id: '10',
+				productId: '12',
+				name: 'Anarchy',
+				src: 'audiovisual/Anarchy.mp4',
+				photo: 'images/music/Anarchy.jpg'
+			},
+			{
+				id: '11',
+				productId: '13',
+				name: '千本桜',
+				src: 'audiovisual/千本桜Ado.mp4',
+				photo: 'images/music/千本桜Ado.jpg'
+			},
+			{
+				id: '',
+				productId: '',
+				name: '',
+				src: '',
+				photo: ''
+			},
+			{
+				id: '',
+				productId: '',
+				name: '',
+				src: '',
+				photo: ''
+			}
+			];
+
+		var rotateY = 0;
+		var thismusic = 1;
+		var index = Number($("#imageslider ul li").attr("aspectIndex"));//get index number
+		var songcolumnindex = 1;
+		var audiovisual = $("#audiovisual")[0];
+
+		function seekAudioTime() {
+			audiovisual.currentTime = $("#seekAudioTime").val();
+		}
+		var toggle = true;
+		function toggleHandler() {
+			//alert("2u03");
+			if (toggle) {
+				$("#songBanner").animate({ left: "0px" }, 300);
+			} else {
+
+				$("#songBanner").animate({ left: "-300px" }, 300);
+			}
+			toggle = !toggle;
+		}
+
+		function prevBtnHandler() {
+			rotateY -= -90;
+			thismusic--;
+			if (thismusic == 1) {
+				$("#prevBtn").off("click", prevBtnHandler);
+				$("#prevBtn").css("opacity", "0.2");
+				$('#prevBtn').css('cursor', 'default');
+			}
+			if ($("#nextBtn").css("opacity") == 0.2) {
+				$("#nextBtn").on("click", nextBtnHandler);
+				$("#nextBtn").css("opacity", "1");
+				$('#nextBtn').css('cursor', 'pointer');
+			}
+			if (index > 0) {
+				index--;
+			} else {
+				index = 3;
+			}
+			$('#audiovisual').attr("src", songdata[thismusic].src);
+			if (audiovisual.paused) {
+				PlayPauseHandler();
+			}
+			audiovisual.autoplay;
+			$(".changemuisc img").attr("src", "images/audio/play1.png");
+			if (index == 0) {
+				$("#imageslider ul li").children().eq(0).attr("src", songdata[thismusic].photo);
+				$("#imageslider ul li").children().eq(1).attr("src", songdata[thismusic + 1].photo);
+				$("#imageslider ul li").children().eq(2).attr("src", songdata[thismusic + 2].photo);
+				$("#imageslider ul li").children().eq(3).attr("src", songdata[thismusic - 1].photo);
+			} else if (index == 1) {
+				$("#imageslider ul li").children().eq(0).attr("src", songdata[thismusic - 1].photo);
+				$("#imageslider ul li").children().eq(1).attr("src", songdata[thismusic].photo);
+				$("#imageslider ul li").children().eq(2).attr("src", songdata[thismusic + 1].photo);
+				$("#imageslider ul li").children().eq(3).attr("src", songdata[thismusic + 2].photo);
+			}
+			else if (index == 2) {
+				$("#imageslider ul li").children().eq(0).attr("src", songdata[thismusic + 2].photo);
+				$("#imageslider ul li").children().eq(1).attr("src", songdata[thismusic - 1].photo);
+				$("#imageslider ul li").children().eq(2).attr("src", songdata[thismusic].photo);
+				$("#imageslider ul li").children().eq(3).attr("src", songdata[thismusic + 1].photo);
+			} else {
+				$("#imageslider ul li").children().eq(0).attr("src", songdata[thismusic + 1].photo);
+				$("#imageslider ul li").children().eq(1).attr("src", songdata[thismusic + 2].photo);
+				$("#imageslider ul li").children().eq(2).attr("src", songdata[thismusic - 1].photo);
+				$("#imageslider ul li").children().eq(3).attr("src", songdata[thismusic].photo);
+			}
+			$("#imageslider ul").css({
+				"transform": "rotateY(" + rotateY + "deg)"
+			});
+			$("#imageslider").toggleClass("transparency", false);
+		}
+
+		function nextBtnHandler() {
+			rotateY -= 90;
+			thismusic++;
+			if (thismusic == (songdata.length - 3)) {
+				$("#nextBtn").off("click", nextBtnHandler);
+				$("#nextBtn").css("opacity", "0.2");
+				$('#nextBtn').css('cursor', 'default');
+			}
+			if ($("#prevBtn").css("opacity") == 0.2) {
+				$("#prevBtn").on("click", prevBtnHandler);
+				$("#prevBtn").css("opacity", "1");
+				$('#prevBtn').css('cursor', 'pointer');
+			}
+			if (index < 3) {
+				index++;
+			} else {
+				index = 0;
+			}
+			$('#audiovisual').attr("src", songdata[thismusic].src);
+			if (audiovisual.paused) {
+				PlayPauseHandler();
+			}
+			audiovisual.autoplay;
+			$(".changemuisc img").attr("src", "images/audio/play1.png");
+			if (index == 0) {
+				$("#imageslider ul li").children().eq(0).attr("src", songdata[thismusic].photo);
+				$("#imageslider ul li").children().eq(1).attr("src", songdata[thismusic + 1].photo);
+				$("#imageslider ul li").children().eq(2).attr("src", songdata[thismusic + 2].photo);
+				$("#imageslider ul li").children().eq(3).attr("src", songdata[thismusic - 1].photo);
+			} else if (index == 1) {
+				$("#imageslider ul li").children().eq(0).attr("src", songdata[thismusic - 1].photo);
+				$("#imageslider ul li").children().eq(1).attr("src", songdata[thismusic].photo);
+				$("#imageslider ul li").children().eq(2).attr("src", songdata[thismusic + 1].photo);
+				$("#imageslider ul li").children().eq(3).attr("src", songdata[thismusic + 2].photo);
+			} else if (index == 2) {
+				$("#imageslider ul li").children().eq(0).attr("src", songdata[thismusic + 2].photo);
+				$("#imageslider ul li").children().eq(1).attr("src", songdata[thismusic - 1].photo);
+				$("#imageslider ul li").children().eq(2).attr("src", songdata[thismusic].photo);
+				$("#imageslider ul li").children().eq(3).attr("src", songdata[thismusic + 1].photo);
+			} else {
+				$("#imageslider ul li").children().eq(0).attr("src", songdata[thismusic + 1].photo);
+				$("#imageslider ul li").children().eq(1).attr("src", songdata[thismusic + 2].photo);
+				$("#imageslider ul li").children().eq(2).attr("src", songdata[thismusic - 1].photo);
+				$("#imageslider ul li").children().eq(3).attr("src", songdata[thismusic].photo);
+			}
+			$("#imageslider ul").css({
+				"transform": "rotateY(" + rotateY + "deg)"
+			});
+			$("#imageslider").toggleClass("transparency", false);
+		}
+
+		function Achangemuisc(themusic) {
+			thismusic = $(themusic).attr('songcolumnindex');
+			rotateY = thismusic * -90;
+			if ((rotateY / 90) % 4 == 0) {
+				index = 0;
+			} else if ((rotateY / 90) % 4 == -1) {
+				index = 1;
+			} else if ((rotateY / 90) % 4 == -2) {
+				index = 2;
+			} else {
+				if ((rotateY / 90) % 4 == -3) {
+					index = 3;
+				}
+			}
+			if ($("#prevBtn").css("opacity") == 0.2) {
+				$("#prevBtn").on("click", prevBtnHandler);
+				$("#prevBtn").css("opacity", "1");
+				$('#prevBtn').css('cursor', 'pointer');
+			} else {
+				if ($("#nextBtn").css("opacity") == 0.2) {
+					$("#nextBtn").on("click", nextBtnHandler);
+					$("#nextBtn").css("opacity", "1");
+					$('#nextBtn').css('cursor', 'pointer');
+				}
+			}
+
+			//$("#imageslider ul").css({
+			//	"transform": "rotateY(" + rotateY + "deg)"
+			//});
+			if (thismusic == 1) {
+				$("#prevBtn").off("click", prevBtnHandler);
+				$("#prevBtn").css("opacity", "0.2");
+				$('#prevBtn').css('cursor', 'default');
+			} else {
+				if (thismusic == (songdata.length - 3)) {
+					$("#nextBtn").off("click", nextBtnHandler);
+					$("#nextBtn").css("opacity", "0.2");
+					$('#nextBtn').css('cursor', 'default');
+				}
+			}
+			$("#playBtn img").attr("src", "images/audio/play1.png");
+			$("#imageslider ul li").children().attr("src", $(themusic).attr('data-photo'));
+			$('#audiovisual').attr("src", $(themusic).attr('data-src'));
+			$("#imageslider").toggleClass("transparency", false);
+			PlayPauseHandler();
+		}
+
+		function Achangeing(theimg) {
+			$(".changemuisc img").attr("src", "images/audio/play1.png");
+			$(theimg).attr("src", "images/audio/pause.png");
+		}
+
+		$("#transparency").click(function () {
+			$("#imageslider").toggleClass("transparency");
+		});
+
+		function init() {
+			$("#songBanner .rightside").click(toggleHandler);
+			if (rotateY == 0) {
+				$("#prevBtn").off("click", prevBtnHandler);
+				$("#prevBtn").css("opacity", "0.2");
+				$('#prevBtn').css('cursor', 'default');
+			}
+			//$("#prevBtn").click(prevBtnHandler);
+			$("#nextBtn").click(nextBtnHandler);
+			$('#imageslider ul').css('transition-duration', '0.7s');
+			$('#audiovisual').attr("src", songdata[1].src);
+			$("#playAudioTime").text(songdata[1].name);
+			$("#imageslider ul li").children().eq(0).attr("src", songdata[thismusic].photo);
+			$("#imageslider ul li").children().eq(1).attr("src", songdata[thismusic + 1].photo);
+			$("#imageslider ul li").children().eq(2).attr("src", songdata[thismusic + 2].photo);
+			$("#imageslider ul li").children().eq(3).attr("src", songdata[thismusic + 3].photo);
+			$("#loopBtn").click(LoopHandler);
+			$("#seekAudioTime").val(0);
+			$('#audiovisual').prop("volume", ($("#volumerange").val() / 100));
+			$("#playBtn").click(PlayPauseHandler);
+			$("#volumerange").click(volumeUpDownHandler);
+			$("#volumeBtn").click(volumeMuted);
+			// $("#audiovisual").on("timeupdate", timeUpdate);
+			$("#audiovisual").on("play", startPlayHandler);
+			$("#audiovisual").on("pause", stopPlayHandler);
+			$("#audiovisual").on("ended", endedPlay);
+		}
+
+		function PlayPauseHandler() {
+			if (audiovisual.paused) {
+				audiovisual.play();
+				$("#playBtn img").attr("src", "images/audio/pause.png");
+				$("#audiovisual").on("timeupdate", timeUpdate);
+			} else {
+				$("#playBtn img").attr("src", "images/audio/play1.png");
+				$(".changemuisc img").attr("src", "images/audio/play1.png");
+				audiovisual.pause();
+			}
+		}
+
+		function LoopHandler() {
+			if ($("#loopBtn").attr("data-control") == "auto") {
+				$("#loopBtn img").attr("src", "images/audio/loop1.png");
+				$("#loopBtn").attr("data-control", "loop");
+				audiovisual.loop = true;
+			} else {
+				audiovisual.loop = false;
+				$("#loopBtn img").attr("src", "images/audio/loop.png");
+				$("#loopBtn").attr("data-control", "auto");
+			}
+		}
+
+		function volumeMuted() {
+			audiovisual.muted = true;
+			$("#volumerange").val(0);
+			$("#volumeBtn img").attr("src", "images/audio/muted.png");
+		}
+
+		function startPlayHandler() {
+			$("#playBtn img").attr("src", "images/audio/pause.png");
+			$("#playAudioTime").text(songdata[thismusic].name);
+		}
+
+		function stopPlayHandler() {
+			$("#playAudioTime").text(songdata[thismusic].name);
+		}
+
+		function endedPlay() {
+			$("#playAudioTime").text(songdata[thismusic].name);
+			$("#playBtn img").attr("src", "images/audio/play1.png");
+			$(".changemuisc img").attr("src", "images/audio/play1.png");
+			if (thismusic != (songdata.length) - 3) {
+				if (audiovisual.ended) {
+					nextBtnHandler();
+				}
+			} else {
+				if (audiovisual.ended) {
+					$("#imageslider").toggleClass("transparency", true);
+				}
+			}
+		}
+
+		function timeUpdate() {
+			$("#seekAudioTime").val($("#seekAudioTime").attr("Time"));
+			$("#seekAudioTime").attr("Time", audiovisual.currentTime);
+			$("#seekAudioTime").attr("max", audiovisual.duration);
+			$("#playAudioTime").text(timeConvert(audiovisual.currentTime)
+				+ " / " + timeConvert(audiovisual.duration));
+		}
+
+		function timeConvert(time) {
+			var mins = parseInt(time / 60);
+			var secs = parseInt(time % 60);
+			if (secs < 10) secs = "0" + secs;
+			return mins + ":" + secs;
+		}
+
+		function volumeUpDownHandler() {
+			var volumesound = $("#volumerange").val();
+			var title = $('#volumerange').attr('title', volumesound);
+			if (volumesound != 0) {
+				$("#volumeBtn img").attr("src", "images/audio/volume.png");
+				audiovisual.muted = false;
+				volumesound /= 100;
+			} else {
+				$("#volumeBtn img").attr("src", "images/audio/muted.png");
+			}
+			audiovisual.volume = volumesound;
+		}
+
+	</script>
+</body>
+
+</html>
