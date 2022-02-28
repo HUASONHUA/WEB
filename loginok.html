@@ -4,7 +4,7 @@
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="refresh" content="3;url=/">
+	<meta http-equiv="refresh" content="3;url=/WEB">
 	<!-- 	之後URL要改回./ -->
 	<script>
 		var myInterval;
@@ -18,7 +18,7 @@
 		};
 		function callHomePage() {
 			//同步請求
-			location.href = '/';
+			location.href = '/WEB';
 		}
 		function moveHandler() {
 			clearInterval(myInterval);//reset timer
@@ -79,25 +79,31 @@
 		animation-iteration-count: 3;
 	}
 
-	#myIndex {}
-
 	@keyframes change {
 		0% {
 			background: #dedede;
 		}
-
-		20% {
-			background: #bab8b8;
+		10% {
+			background: #cecccc;
 		}
-
-		60% {
+		20% {
+			background: #bebebe;
+		}
+		30% {
+			background: #a2a3a3;
+		}
+		40% {
 			background: #8b8c8c;
 		}
-
-		80% {
+		50% {
+			background: #797878;
+		}
+		60% {
 			background: #696969;
 		}
-
+		80% {
+			background: #585858;
+		}
 		100% {
 			background: #ffffff;
 		}
